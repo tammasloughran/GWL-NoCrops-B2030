@@ -1,0 +1,77 @@
+# For more details see https://payu.readthedocs.io/en/latest/config.html#config
+jobname: SSP585
+project: p66
+queue: normal
+walltime: 1:40:00
+storage: # For me, payu couldn't properly recognise that p66 is needed. I've added it here.
+    gdata:
+        - hh5
+        - p66
+    scratch:
+        - p66
+
+# note: if laboratory is relative path, it is relative to /scratch/$PROJECT/$USER
+laboratory: access-esm
+model: access
+
+submodels:
+    - name: atmosphere
+      model: um
+      ncpus: 192
+      exe: /g/data/access/payu/access-esm/bin/coe/um7.3x
+      input:
+        - /g/data1a/p66/txz599/data/ancil/CMIP6
+        - /g/data/access/payu/access-esm/input/pre-industrial/atmosphere
+
+    - name: ocean
+      model: mom
+      ncpus: 180
+      exe: /g/data/access/payu/access-esm/bin/coe/mom5xx
+      input:
+        - /g/data/access/payu/access-esm/input/pre-industrial/ocean/common
+        - /g/data/access/payu/access-esm/input/pre-industrial/ocean/pre-industrial
+
+    - name: ice
+      model: cice
+      ncpus: 12
+      exe: /g/data/access/payu/access-esm/bin/coe/cicexx
+      input:
+        - /g/data/access/payu/access-esm/input/pre-industrial/ice
+
+    - name: coupler
+      model: oasis
+      ncpus: 0
+      input:
+        - /g/data/access/payu/access-esm/input/pre-industrial/coupler
+
+collate:
+   exe: /g/data/access/payu/access-esm/bin/mppnccombine
+   restart: true
+   mem: 4GB
+
+restart: /g/data/access/payu/access-esm/restart/pre-industrial
+
+calendar:
+    start:
+        # Check also 'MODEL_BASIS_TIME' in atmosphere namelists,
+        # 'inidate' in ice namelists
+        year: 2015
+        month: 1
+        days: 1
+
+    runtime:
+        years: 1 # NOTE: Must be 1 year for land use changes
+        months: 0
+        days: 0
+
+# Increase to run multiple years in a single submission. Only really needed for standalone
+# simulations of submodels. If you change this then you probably need to change the walltime too.
+runspersub: 1
+
+userscripts:
+    # Setup land use changes
+    setup: ./scripts/pre.sh /g/data/p66/tfl561/LUH2/CABLE/ssp585/new_ssp585_land_use.nc
+
+stacksize: unlimited
+
+qsub_flags: -W umask=027
