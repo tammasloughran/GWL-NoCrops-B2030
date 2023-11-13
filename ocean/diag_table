@@ -5,6 +5,7 @@
 "ocean_month",                 1,  "months", 1, "days", "time",
 "ocean_scalar",                1,  "months", 1, "days", "time"
 "ocean_bgc", 1,  "months", 1, "days", "time",
+"ocean_bgc_daily", 1,  "days", 1, "days", "time",
 "ocean_bgc_mth", 1,  "months", 1, "days", "time",
 "ocean_bgc_ann", 12,  "months", 1, "days", "time",
 "ocean"      ,                12,  "months", 1, "days", "time",
@@ -92,16 +93,20 @@
 "ocean_model","temp_global_ave","temp_global_ave" ,"ocean_scalar","all",.true.,"none",2
 #
 # Rosetta stone: sst=sea_surface_temperature (monthly)
- "ocean_model","surface_temp","sst"  ,"ocean_month","all",.true.,"none",2
+# "ocean_model","surface_temp","sst"  ,"ocean_month","all",.true.,"none",2
+ "ocean_model","surface_pot_temp","sst"  ,"ocean_month","all",.true.,"none",2
 #
 # Rosetta stone: sst=sea_surface_temperature  (daily)
 # "ocean_model","surface_temp","sst"  ,"ocean_daily","all",.true.,"none",2
+ "ocean_model","surface_pot_temp","sst"  ,"ocean_daily","all",.true.,"none",2
 #
 # Rosetta stone: sst_sq=square_of_sea_surface_temperature (monthly)
- "ocean_model","squared_surface_temp","sst_sq"  ,"ocean_month","all",.true.,"none",2
+# "ocean_model","squared_surface_temp","sst_sq"  ,"ocean_month","all",.true.,"none",2
+ "ocean_model","squared_surface_pot_temp","sst_sq"  ,"ocean_month","all",.true.,"none",2
 #
 # Rosetta stone: sst_sq=square_of_sea_surface_temperature (daily)
 # "ocean_model","squared_surface_temp","sst_sq"  ,"ocean_daily","all",.true.,"none",2
+ "ocean_model","squared_surface_pot_temp","sst_sq"  ,"ocean_daily","all",.true.,"none",2
 #
 # Rosetta stone: salt=sea_water_salinity
  "ocean_model","salt","salt" ,"ocean_month","all",.true.,"none",2
@@ -111,6 +116,8 @@
 #
 # Rosetta stone: surface_salt=sea_surface_salinity
  "ocean_model","surface_salt","sss" ,"ocean_month","all",.true.,"none",2
+ "ocean_model","surface_salt","sss"  ,"ocean_daily","all",.true.,"none",2
+ "ocean_model","squared_surface_salt","sss_sq"  ,"ocean_daily","all",.true.,"none",2
 #
 # Rosetta stone: pot_rho_0=sea_water_potential_density 
  "ocean_model","pot_rho_0","pot_rho_0" ,"ocean_month","all",.true.,"none",2
@@ -126,6 +133,8 @@
 #
 # Rosetta stone: mld=ocean_mixed_layer_thickness_defined_by_sigma_t
  "ocean_model","mld","mld" ,"ocean_month","all",.true.,"none",2
+ "ocean_model","mld","mld_max" ,"ocean_month","all", max,"none",2
+ "ocean_model","mld","mld_min" ,"ocean_month","all", min,"none",2
 #
 # Rosetta stone: mld_sq=square_of_ocean_mixed_layer_thickness_defined_by_sigma_t
  "ocean_model","mld_sq","mld_sq" ,"ocean_month","all",.true.,"none",2
@@ -683,6 +692,8 @@
 "ocean_model","stf07","stf07",        "ocean_bgc","all",.true.,"none",2
 "ocean_model","stf09","stf09",        "ocean_bgc","all",.true.,"none",2
 "ocean_model","stf10","stf10",        "ocean_bgc","all",.true.,"none",2
+"ocean_model","src07","src07",        "ocean_bgc","all",.true.,"none",2
+"ocean_model","src09","src09",        "ocean_bgc","all",.true.,"none",2
 "ocean_model","pco2","pco2",          "ocean_bgc","all",.true.,"none",2
 "ocean_model","paco2","paco2",        "ocean_bgc","all",.true.,"none",2
 "ocean_model","pprod_gross","pprod_gross",   "ocean_bgc","all",.true.,"none",2
@@ -696,6 +707,7 @@
 "ocean_model","det_sediment","det_sediment",        "ocean_bgc","all",.true.,"none",2
 "ocean_model","caco3_sediment","caco3_sediment",        "ocean_bgc","all",.true.,"none",2
 
+ "ocean_model","surface_phy","phycos_raw"  ,"HISTORY/ocean_bgc_daily","all",.true.,"none",2
 
  "ocean_model","surface_no3","no3os_raw"  ,"ocean_bgc_mth","all",.true.,"none",2
  "ocean_model","surface_phy","phynos_raw"  ,"ocean_bgc_mth","all",.true.,"none",2

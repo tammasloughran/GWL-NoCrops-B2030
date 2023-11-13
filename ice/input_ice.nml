@@ -1,10 +1,10 @@
 &coupling
     caltype = 1
     jobnum = 2
-    inidate = 20150101
-    init_date = 20150101
-    runtime0 = 3155673600
-    runtime = 86400
+    inidate=05000101
+    init_date=00010101
+    runtime0=15746918400
+    runtime=31536000
     dt_cpl_ai = 10800
     dt_cpl_io = 3600
     dt_cice = 3600
