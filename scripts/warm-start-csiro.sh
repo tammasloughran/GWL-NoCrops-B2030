@@ -3,7 +3,7 @@
 # Initialise an ACCESS-ESM Payu run from a CSIRO experiment
 # This should be run from the top-level warm-start.sh script, which sets up the $csiro_source etc. environment variables
 
-set -eu
+set -eux
 trap "echo Error in warm_start_csiro.sh" ERR
 
 echo "Sourcing restarts from ${csiro_source} / year ${source_year}"
@@ -37,7 +37,9 @@ yearstart="$(printf '%04d' $source_year)0101"
 pyearend="$(printf '%04d' $(( source_year - 1 )) )1231"
 
 # Copy in the restart files from the CSIRO run
-cp -v $csiro_source/atm/${expname}.astart-${yearstart} $payu_restart/atmosphere/restart_dump.astart
+cp -v \
+    /g/data/p66/tfl561/sensitivity_lu_map/restarts/PI-GWL-B2030_10pct_forestation.astart-05000101 \
+    $payu_restart/atmosphere/restart_dump.astart
 
 for f in $csiro_source/cpl/*-${pyearend}; do
     cp -v $f $payu_restart/coupler/$(basename ${f%-*})
