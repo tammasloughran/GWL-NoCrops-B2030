@@ -20,7 +20,7 @@ lu_file=$1
 year=$(mule-pumf --component fixed_length_header work/atmosphere/restart_dump.astart | sed -n 's/.*t2_year\s*:\s*//p')
 
 # Back up the original restart file
-mv work/atmosphere/restart_dump.astart work/atmosphere/restart_dump.astart.orig
+cp work/atmosphere/restart_dump.astart work/atmosphere/restart_dump.astart.orig
 
 # Use the CSIRO script to set the land use
 # Skip the first year because I've already injected the land cover into the restart file
