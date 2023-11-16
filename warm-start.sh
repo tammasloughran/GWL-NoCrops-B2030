@@ -17,7 +17,7 @@ if [ $source == "CSIRO" ]; then
     #user=txz599
     export expname=PI-GWL-t6            # Source experiment - PI pre-industrial, HI historical
     export source_year=500          # Change this to create different ensemble members
-    export csiro_source=/g/data/$project/archive/non-CMIP6/ACCESS-ESM1-5/$expname/restart
+    export csiro_source=/g/data/$project/archive/non-CMIP/ACCESS-ESM1-5/$expname/restart
 
     # Call the main warm-start script
     scripts/warm-start-csiro.sh
