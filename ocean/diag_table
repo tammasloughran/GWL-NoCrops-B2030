@@ -707,7 +707,7 @@
 "ocean_model","det_sediment","det_sediment",        "ocean_bgc","all",.true.,"none",2
 "ocean_model","caco3_sediment","caco3_sediment",        "ocean_bgc","all",.true.,"none",2
 
- "ocean_model","surface_phy","phycos_raw"  ,"HISTORY/ocean_bgc_daily","all",.true.,"none",2
+ "ocean_model","surface_phy","phycos_raw"  ,"ocean_bgc_daily","all",.true.,"none",2
 
  "ocean_model","surface_no3","no3os_raw"  ,"ocean_bgc_mth","all",.true.,"none",2
  "ocean_model","surface_phy","phynos_raw"  ,"ocean_bgc_mth","all",.true.,"none",2
