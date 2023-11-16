@@ -18,7 +18,7 @@ submodels:
     - name: atmosphere
       model: um
       ncpus: 192
-      exe: /g/data/access/payu/access-esm/bin/coe/um7.3x
+      exe: /g/data/p66/txz599/ACCESS-ESM1p5/bin/um_hg3.exe-20200311_r343
       input:
         - /g/data1a/p66/txz599/data/ancil/CMIP6
         - /g/data/access/payu/access-esm/input/pre-industrial/atmosphere
@@ -26,7 +26,7 @@ submodels:
     - name: ocean
       model: mom
       ncpus: 180
-      exe: /g/data/access/payu/access-esm/bin/coe/mom5xx
+      exe: /g/data/p66/pbd562/test/t47-hxw/jan20/4.0.2/trunk_ESM1.5/submodels/ACCESS-ESM1.5-MOM5/exec/access-cm2/ACCESS-CM/fms_ACCESS-CM.x
       input:
         - /g/data/access/payu/access-esm/input/pre-industrial/ocean/common
         - /g/data/access/payu/access-esm/input/pre-industrial/ocean/pre-industrial
@@ -34,7 +34,7 @@ submodels:
     - name: ice
       model: cice
       ncpus: 12
-      exe: /g/data/access/payu/access-esm/bin/coe/cicexx
+      exe: /g/data/p66/pbd562/test/t47-hxw/jan20/4.0.2/trunk_ESM1.5/bin/cice4.1_access-mct-12p-20200110
       input:
         - /g/data/access/payu/access-esm/input/pre-industrial/ice
 
