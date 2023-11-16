@@ -33,7 +33,7 @@ old_vegfrac = np.array(vlist)
 if args.fracfile.endswith(".nc"):
     # Read from a netCDF version of a dump file
     d = netCDF4.Dataset(args.fracfile)
-    v = d.variables['field1391']
+    v = d.variables['fraction']
     # There may be some points outside the valid range
     v.set_auto_mask(False)
     vegfrac = v[0]
