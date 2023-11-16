@@ -19,12 +19,16 @@ lu_file=$1
 # Get the current year from field t2_year of the restart file
 year=$(mule-pumf --component fixed_length_header work/atmosphere/restart_dump.astart | sed -n 's/.*t2_year\s*:\s*//p')
 
-# If that year is in the land use file, save a single timestep to a new netcdf file
-if cdo selyear,$(( year )) -chname,fraction,field1391 $lu_file work/atmosphere/land_frac.nc; then
+# Back up the original restart file
+mv work/atmosphere/restart_dump.astart work/atmosphere/restart_dump.astart.orig
 
-    # Back up the original restart file
-    mv work/atmosphere/restart_dump.astart work/atmosphere/restart_dump.astart.orig
-
-    # Use the CSIRO script to set the land use
-    python scripts/update_cable_vegfrac.py -i work/atmosphere/restart_dump.astart.orig -o work/atmosphere/restart_dump.astart -f work/atmosphere/land_frac.nc
+# Use the CSIRO script to set the land use
+# Skip the first year because I've already injected the land cover into the restart file
+# manually. In the old ksh scripts this was done at the end of the year, but in payu it is done
+# before the start of the year.
+if [[ $year != 500 ]]; then
+    python scripts/update_cable_vegfrac.py \
+            -i work/atmosphere/restart_dump.astart.orig \
+            -o work/atmosphere/restart_dump.astart \
+            -f $lu_file
 fi

@@ -70,7 +70,7 @@ runspersub: 1
 
 userscripts:
     # Setup land use changes
-    setup: ./scripts/pre.sh /g/data/p66/tfl561/LUH2/CABLE/ssp585/new_ssp585_land_use.nc
+    setup: ./scripts/pre.sh /g/data/p66/tfl561/sensitivity_lu_map/2030_ssp585_no_humans_CABLE_fraction.nc
 
 stacksize: unlimited
 
