@@ -957,7 +957,7 @@
 
 &filenatforce
     file_scvary = ''
-    file_volcts = '/g/data/access/projects/access/data/ancil/cmip5/volcts_18502000ave.dat'
+    file_volcts = '/g/data/access/projects/access/data/ancil/CMIP5/volcts_18502000ave.dat'
 /
 
 &pprintxn
