@@ -1,5 +1,5 @@
 # For more details see https://payu.readthedocs.io/en/latest/config.html#config
-jobname: SSP585
+jobname: GWL-NoCrops-B2030
 project: p66
 queue: normal
 walltime: 1:40:00
@@ -55,7 +55,7 @@ calendar:
     start:
         # Check also 'MODEL_BASIS_TIME' in atmosphere namelists,
         # 'inidate' in ice namelists
-        year: 2015
+        year: 500
         month: 1
         days: 1
 
