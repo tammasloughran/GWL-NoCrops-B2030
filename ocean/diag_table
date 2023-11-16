@@ -1,7 +1,7 @@
 "ACCESS-ESM_CMIP6"
 0001 01 01 0 0 0
 ## output files
-#"ocean_daily",                24,  "hours",  1, "days", "time",
+"ocean_daily",                24,  "hours",  1, "days", "time",
 "ocean_month",                 1,  "months", 1, "days", "time",
 "ocean_scalar",                1,  "months", 1, "days", "time"
 "ocean_bgc", 1,  "months", 1, "days", "time",
@@ -29,10 +29,10 @@
  "ocean_model","geolon_t","geolon_t"  ,"ocean_month","all",.false.,"none",2
 #
 # geographical longitude and latitude of corner and tracer points (ocean_daily)
-# "ocean_model","geolat_c","geolat_c","ocean_daily","all",.false.,"none",2
-# "ocean_model","geolon_c","geolon_c","ocean_daily","all",.false.,"none",2
-# "ocean_model","geolat_t","geolat_t","ocean_daily","all",.false.,"none",2
-# "ocean_model","geolon_t","geolon_t","ocean_daily","all",.false.,"none",2
+ "ocean_model","geolat_c","geolat_c","ocean_daily","all",.false.,"none",2
+ "ocean_model","geolon_c","geolon_c","ocean_daily","all",.false.,"none",2
+ "ocean_model","geolat_t","geolat_t","ocean_daily","all",.false.,"none",2
+ "ocean_model","geolon_t","geolon_t","ocean_daily","all",.false.,"none",2
 #
 # horizontal area of tracer and velocity grid cells
  "ocean_model","area_t","area_t" ,"ocean_month","all",.false.,"none",2
@@ -707,7 +707,7 @@
 "ocean_model","det_sediment","det_sediment",        "ocean_bgc","all",.true.,"none",2
 "ocean_model","caco3_sediment","caco3_sediment",        "ocean_bgc","all",.true.,"none",2
 
- "ocean_model","surface_phy","phycos_raw"  ,"HISTORY/ocean_bgc_daily","all",.true.,"none",2
+ "ocean_model","surface_phy","phycos_raw"  ,"ocean_bgc_daily","all",.true.,"none",2
 
  "ocean_model","surface_no3","no3os_raw"  ,"ocean_bgc_mth","all",.true.,"none",2
  "ocean_model","surface_phy","phynos_raw"  ,"ocean_bgc_mth","all",.true.,"none",2
