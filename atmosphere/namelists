@@ -393,7 +393,7 @@
     l_co2_radiation = .true.
     l_co2_mass = .true.
     l_co2_interactive = .true.
-    l_co2_emits = .true.
+    l_co2_emits = .false.
     l_co2_tracer = .true.
     l_tracer_mass = .true.
     i_tracermass_start = 1

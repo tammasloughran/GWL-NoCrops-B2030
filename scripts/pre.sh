@@ -9,6 +9,7 @@
 
 source  /etc/profile.d/modules.sh
 module use /g/data/hh5/public/modules
+module unload conda
 module load conda/analysis3
 
 set -eu
