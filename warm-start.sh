@@ -23,7 +23,7 @@ if [ $source == "CSIRO" ]; then
     scripts/warm-start-csiro.sh
     # Replace the atmosphere restart file with my own.
     mv /g/data/p66/tfl561/sensitivity_lu_map/restarts/PI-GWL-B2060_no-crops.astart-05000101 /scratch/p66/tfl561/access-esm/archive/GWL-NoCrops-B2060/restart000/atmosphere/restart_dump.astart
-    scripts/set_restart_year.sh 500
+    scripts/set_restart_year.sh 510
 
 else
 
