@@ -1,5 +1,5 @@
 # For more details see https://payu.readthedocs.io/en/latest/config.html#config
-jobname: GWL-NoCrops-B2030
+jobname: GWL-NoCrops-B2050
 project: p66
 queue: normal
 walltime: 1:40:00
@@ -70,7 +70,7 @@ runspersub: 1
 
 userscripts:
     # Setup land use changes
-    setup: ./scripts/pre.sh /g/data/p66/tfl561/sensitivity_lu_map/2030_ssp585_no_humans_CABLE_fraction.nc
+    setup: ./scripts/pre.sh /g/data/p66/tfl561/sensitivity_lu_map/2050_ssp585_no_humans_CABLE_fraction.nc
 
 stacksize: unlimited
 
