@@ -8,7 +8,7 @@ vars = {
 'PAREXE': 'parexe',
 'PRINT_STATUS': 'PrStatus_Oper',
 'RPSEED': '',
-'RUNID': 'GWL-NoCrops-B2030',
+'RUNID': 'GWL-NoCrops-B2055',
 'TYPE': 'NRUN',
 'UM_ATM_NPROCX': '16',
 'UM_ATM_NPROCY': '12',
